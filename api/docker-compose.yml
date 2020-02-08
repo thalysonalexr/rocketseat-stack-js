@@ -9,6 +9,8 @@ services:
     volumes:
       - .:/usr/app
     container_name: rocketseat-stack-js_api
+    depends_on:
+      - mongo
     links:
       - mongo
 
