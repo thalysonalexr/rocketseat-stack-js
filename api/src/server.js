@@ -1,5 +1,12 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const router = require("./routes");
+
+const mongoUrl = "mongodb://localhost:27017/nodeapi";
+
+mongoose.connect(mongoUrl, {
+  useNewUrlParser: true
+}, () => console.log("Database is connected."));
 
 const app = express();
 

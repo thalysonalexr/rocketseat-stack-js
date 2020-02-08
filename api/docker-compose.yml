@@ -9,3 +9,16 @@ services:
     volumes:
       - .:/usr/app
     container_name: rocketseat-stack-js_api
+    links:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    environment:
+      - MONGO_DATA_DIR=/data/db
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/db/mongo:/data/db
+    container_name: rocketseat-stack-js_mongo
